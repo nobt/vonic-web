@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!-- 定制版 ionic 样式 -->
+	<link rel="stylesheet" href="lib/vonic.min.css">
+
+	<!-- 依赖库 axios/vue/vue-router -->
+  <script src="lib/jquery-3.1.1.js"></script>
+	<script src="lib/axios.min.js"></script>
+	<script src="lib/vue.min.js"></script>
+	<script src="lib/vue-router.min.js"></script>
+
+	<!-- vonic 核心文件 -->
+	<script src="lib/vonic.min.js"></script>
+</head>
+<body>
+<von-app></von-app>
+<script type="text/x-template" id="index">
+    <div class="page has-navbar" v-nav="{ title: 'Home' }">
+      <div class="page-content text-center">
+        <h2 class="padding" v-text="msg"></h2>
+
+        <router-link class="button button-assertive" to="/about">
+          <i class="ion-information-circled"></i> About
+        </router-link>
+      </div>
+    </div>
+</script>
+<script type="text/x-template" id="about">
+    <div class="page has-navbar" v-nav="{ title: 'about', showBackButton: true }">
+      <div class="page-content text-center">
+        <h2 class="padding">{{msg}}</h2>
+         <p>{{ message }}</p>
+         <input v-model="message">
+      </div>
+    </div>
+</script>
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<!--加载其他 START-->
+
+<script src="js/components.js"></script>
+
+<!--加载其他 END-->
+
+<script src="js/routes.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
